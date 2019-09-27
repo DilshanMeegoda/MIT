@@ -1,0 +1,7 @@
+﻿<div ng-include="'views/Report/Templates/typedefault.html'"></div>
+
+<div ng-repeat="field in item.values" class="add-child-fld">
+    <div ng-show="false">{{field.id=$index + 1}}</div>
+    <input type="text" ng-model="field.name" class="form-control input-sm report-create-chk-child" placeholder="Item Name"> <div class="fa fa-times delete btn-child-del" ng-click="item.values.splice($index, 1)"> </div>
+</div>
+<div class="fa fa-plus report-create-add-btn" ng-click="addNewItem(item.values)"> Add</div>

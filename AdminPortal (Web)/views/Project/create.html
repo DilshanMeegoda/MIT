@@ -1,0 +1,78 @@
+﻿<div class="page-container">
+    <div class="col-md-6">
+        <div class="row">
+            <h3>Project Create</h3>
+            <hr />
+            <form name="form" role="form">
+                <div class="form-field-container">
+                    <label>Project Title</label>
+                    <input type="text" class="form-control" ng-model="project.projectVm.title" placeholder="Project Title" />
+                </div>
+                <div class="form-field-container">
+                    <label>Description</label>
+                    <textarea id="txtArea" rows="10" cols="70" ng-model="project.projectVm.description" placeholder="Description" />
+                    <!--<input type="text" class="form-control" ng-model="project.projectVm.description" placeholder="Description" />-->
+                </div>
+                <div class="form-field-container">
+                    <label>Location</label>
+                    <input type="text" class="form-control" ng-model="project.projectVm.location" placeholder="Location" />
+                </div>
+                <div class="form-field-container">
+                    <label>Radius</label>
+                    <input type="text" class="form-control" ng-model="project.projectVm.radius" placeholder="Radius" />
+                </div>
+                <div class="form-field-container">
+                    <label>Active</label>
+                    <input type="checkbox" ng-model="project.projectVm.isActive">
+                </div>
+                <div class="form-field-container">
+                    <label>Owner</label>
+                    <select id="owner" ng-model="project.projectVm.ownerUserId"
+                            ng-options="item.id as item.name for item in project.users"></select>
+                </div>
+                <div class="form-group">
+                    <label>Assign Reports</label>
+                    <br />
+                    <!--<dropdown-multiselect pre-selected="project.reports" model="project.projectVm.selectedReports" options="project.reports"></dropdown-multiselect>-->
+
+                    <tags-input ng-model="project.projectVm.reportLiteDtoList"
+                                display-property="name"
+                                placeholder="Add Reports">
+                        <auto-complete source="project.GetReportsByTerm($query)"></auto-complete>
+                    </tags-input>
+                </div>
+                <div class="form-group">
+                    <label>Assign Users</label>
+                    <br />
+                    <!--<dropdown-multiselect pre-selected="project.users" model="project.projectVm.selectedUsers" options="project.users"></dropdown-multiselect>-->
+
+                    <tags-input ng-model="project.projectVm.userLiteDtoList"
+                                display-property="name"
+                                key-property="email"
+                                add-from-autocomplete-only="true"
+                                placeholder="Add Users">
+                        <auto-complete source="project.GetUsersByTerm($query)"
+                                       min-length="0"
+                                       max-results-to-show="10"
+                                       template="my-custom-template"></auto-complete>
+                    </tags-input>
+                </div>
+                <div class="form-field-container">
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" ng-click="project.CreateProject()">Create</button>
+                    <a href="#/Project" class="btn btn-link">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="my-custom-template">
+    <div class="left-panel">
+        <img ng-src="https://dilshanmee.blob.core.windows.net/uploads/{{data.image}}" />
+    </div>
+    <div class="right-panel">
+        <!--<span ng-bind-html="$highlight($getDisplayText())"></span>-->
+        <span>({{data.name}})</span>
+        <span>({{data.email}})</span>
+    </div>
+</script>

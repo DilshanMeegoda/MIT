@@ -1,0 +1,42 @@
+﻿<div class="page-container">
+    <div class="col-md-6">
+        <div class="row">
+            <h3>User Update</h3>
+            <hr />
+            <form name="form" role="form">
+                <div class="form-field-container">
+                    <label>FullName</label>
+                    <input type="text" class="form-control" ng-model="user.userVm.displayName" placeholder="Full Name" />
+                </div>
+                <div class="form-field-container">
+                    <label>UserName</label>
+                    <input type="text" class="form-control" ng-model="user.userVm.userName" required placeholder="Email" />
+                </div>
+                <div class="form-field-container">
+                    <label>Email</label>
+                    <input type="text" class="form-control" ng-model="user.userVm.email" required placeholder="Email" />
+                </div>
+                <div class="form-field-container">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" ng-model="user.userVm.phone" placeholder="Phone" />
+                </div>
+                <div class="form-field-container">
+                    <label>Password</label>
+                    <input type="password" class="form-control" ng-model="user.userVm.password" required placeholder="Password" />
+                </div>
+                <div class="form-field-container">
+                    <label>Role</label>
+                    <select id="roles" ng-model="user.userVm.roleId" ng-options="c.id as c.name for c in user.roles"></select>
+                </div>
+                <div class="form-field-container">
+                    <label>Active</label>
+                    <input type="checkbox" ng-model="user.userVm.isActive">
+                </div>
+                <div class="form-field-container">
+                    <button type="submit" ng-disabled="form.$invalid" ng-click="user.UpdateUser()" class="btn btn-primary">Update</button>
+                    <a href="#/User" class="btn btn-link">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

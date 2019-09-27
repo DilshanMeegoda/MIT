@@ -1,0 +1,10 @@
+﻿
+<div data-ng-repeat="option in item.options" class="mr-t-10 mr-b-10">
+    <div class="checkbox-inline pull-right option-padding" data-ng-switch on="option.type">
+        <label data-ng-switch-when="checkbox">
+            <input type="checkbox" ng-model="option.value" ng-true-value="'true'" ng-false-value="'false'"> {{option.name}}
+        </label>
+    </div>
+</div>
+<div class="clearfix"></div>
+

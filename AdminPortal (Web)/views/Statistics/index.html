@@ -1,0 +1,68 @@
+﻿
+<style type="text/css">
+    .gridStyle {
+        border: 1px solid #d4d4d4;
+        width: 100%;
+        height: 300px;
+    }
+
+    .custom-field {
+        text-align:center;
+    }
+
+    .custom-field label {
+        font-size:40px;
+    }
+
+    .custom-field span {
+        text-transform:uppercase;
+        font-size:14px;
+    }
+
+    .ui-grid-top-panel {
+        background:#333 !important;
+        color:#fff;
+    }
+
+    .align-center {
+        text-align:center;
+    }
+</style>
+<div>
+    <h2 class="align-center"> STATISTICS </h2>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-field-container custom-field">
+                        <label style="font-size:xx-large ;color:violet">{{statistics.statisticsVm.created}}</label>
+                        <span>CREATED</span>
+                    </div>
+                    <div class="form-field-container custom-field">
+                        <label style="font-size:xx-large ;color:lightgreen">{{statistics.statisticsVm.archived}}</label>
+                        <span>ARCHIVED</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-field-container custom-field">
+                        <label style="font-size:xx-large ;color:sandybrown;position:center">{{statistics.statisticsVm.sentForVerification}}</label>
+                        <span>SENT FOR VERIFICATION</span>
+                    </div>
+                    <div class="form-field-container custom-field">
+                        <label style="font-size:xx-large ; color:lightgreen">{{statistics.statisticsVm.acceptedVerfication}}</label>
+                        <span>ACCEPTED VERIFICATION</span>
+                    </div>
+                    <div class="form-field-container custom-field">
+                        <label style="font-size:xx-large ;color:red">{{statistics.statisticsVm.deniedVerification}}</label>
+                        <span>DENIED VERIFICATION</span>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+
+<div>
+    <h2 class="align-center"> COMPANIES </h2>
+    <div class="gridStyle" ui-grid="statistics.gridOptions"></div>
+</div>

@@ -1,0 +1,132 @@
+<div class="page-container">
+    <div class="form-fields" ng-hide="previewMode">
+        <div class="row">
+            <div class="form-properties col-md-6">
+
+                <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+                <!--<button class='btn btn-default' ng-click="addAlert()">Add Alert</button>-->
+
+                <h3>Report</h3>
+                <div class="row">
+                    <!--<div class="col-md-2">
+                        <div class="form-field-container">
+                            <label>Report ID: </label>
+                            <input type="text" name="form-id" ng-disabled="true" ng-model="form.form_id">
+                        </div>
+                    </div>-->
+                    <div class="col-md-6">
+                        <div class="form-field-container">
+                            <label>Report Name:</label>
+                            <input type="text" name="form-name" ng-disabled="previewMode" ng-model="form.form_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-field-container">
+                            <label>Add Fields:</label>
+                            <select ng-model="addField.new" ng-options="type.name as type.value for type in addField.types"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-field-container">
+                            <label>&nbsp;</label>
+                            <button type="submit" class="btn btn-fluid btn-highlight" ng-click="addNewField()"><i class="icon-plus"></i> Add Field</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p ng-show="form.form_fields.length == 0">No fields added yet.</p>
+        <accordion close-others="accordion.oneAtATime">
+            <accordion-group ng-repeat="field in form.form_fields">
+                <accordion-heading>
+                    {{field.title}}
+                    <button class="btn-sm btn-danger pull-right" type="button" ng-click="deleteField(field.id)"><i class="icon-trash icon-white"></i> Delete</button>
+                </accordion-heading>
+                <div class="accordion-edit inner-form-container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-field-container">
+                                <label>Field ID: </label>
+                                <label class="value">{{field.id}}</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-field-container">
+                                <label>Field Type:</label>
+                                <label class="value">{{field.type}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-field-container">
+                                <label>Field Title:</label>
+                                <input type="text" ng-model="field.title" value="{{field.title}}">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-field-container">
+                                <label>Field Default Value:</label>
+                                <input type="text" ng-model="field.value" value="{{field.value}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="showAddOptions(field)">
+                        <div class="col-md-6">
+                            <div class="form-field-container">
+                                <label>Field Options:</label>
+
+                                <div ng-repeat="option in field.field_options">
+                                    <input type="text" ng-model="option.option_title" value="{{option.option_title}}">
+                                    <a class="btn btn-danger btn-mini right" type="button" ng-click="deleteOption(field, option)"><i class="icon-minus icon-white"></i></a>
+                                    <span class="label label-inverse">Value: {{ option.option_value }}</span>
+                                </div>
+                                <button class="btn btn-primary btn-small" type="button" ng-click="addOption(field)"><i class="icon-plus icon-white"></i> Add Option</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-field-container">
+                                <label>Required</label>
+                                <span class="span6">
+                                    <input type="radio" ng-value="true" ng-selected ng-model="field.required" />
+                                    &nbsp; Yes
+                                </span>
+                                <span class="span6 mleft-10">
+                                    <input type="radio" ng-value="false" ng-model="field.required" />
+                                    &nbsp; No
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-field-container">
+                                <label>Disabled:</label>
+                                <span class="span6">
+                                    <input type="radio" ng-value="true" ng-selected ng-model="field.disabled" />
+                                    &nbsp; Yes
+                                </span>
+                                <span class="span6 mleft-10">
+                                    <input type="radio" ng-value="false" ng-model="field.disabled" />
+                                    &nbsp; No
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </accordion-group>
+        </accordion>
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-primary right" type="button" ng-click="saveForm()"><i class="icon-eye-open icon-white"></i> Save Form</button>
+                <button class="btn right" type="button" ng-click="reset()"><i class="icon-refresh icon-white"></i> Reset</button>
+            </div>
+        </div>
+    </div>
+</div>

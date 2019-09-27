@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="fill_parent"
+    android:focusableInTouchMode="true"
+    android:layout_height="fill_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar_verify"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c5c5c5"
+        android:layout_alignBottom="@+id/my_toolbar_verify"
+        android:layout_alignParentLeft="true" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/my_toolbar_verify"
+        android:fadingEdgeLength="0dp"
+        android:layout_above="@+id/relativeLayout">
+		<RelativeLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:background="@color/white">
+			<TextView
+				android:layout_width="300dp"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_marginTop="10dp"
+				android:text="Accept the report"
+				android:id="@+id/textViewAcceptHeader"
+				android:textColor="#9b9ba7"
+				android:layout_alignParentTop="true"
+				android:layout_marginLeft="20dp" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:text="Verifier Name"
+				android:id="@+id/textView2"
+				android:textColor="#b6b6b6"
+				android:layout_marginTop="27dp"
+				android:layout_below="@+id/textViewAcceptHeader"
+				android:layout_alignStart="@+id/textViewAcceptHeader"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="Verifier Name"
+				android:id="@+id/textViewVerifierName"
+				android:layout_below="@+id/textView2"
+				android:layout_marginTop="17dp"
+				android:textColor="#333333"
+				android:layout_alignStart="@+id/textViewAcceptHeader" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:text="Date"
+				android:id="@+id/textView4"
+				android:layout_below="@+id/textViewVerifierName"
+				android:layout_marginTop="23dp"
+				android:textColor="#b6b6b6"
+				android:layout_alignStart="@+id/textViewAcceptHeader" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="Date Now"
+				android:id="@+id/textViewVerifieddate"
+				android:layout_below="@+id/textView4"
+				android:layout_marginTop="21dp"
+				android:textColor="#333333"
+				android:layout_alignStart="@+id/textViewAcceptHeader" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:text="Reason"
+				android:id="@+id/textViewVerifydescription"
+				android:textColor="#b6b6b6"
+				android:layout_below="@+id/textViewVerifieddate"
+				android:layout_marginTop="31dp"
+				android:layout_alignStart="@+id/textViewAcceptHeader" />
+			<EditText
+				android:layout_width="283.5dp"
+				android:layout_height="match_parent"
+				android:inputType="textMultiLine"
+				android:ems="10"
+				android:paddingBottom="3dp"
+				android:textColor="#4a4a4a"
+				android:background="@drawable/custom_edit_text_color"
+				android:id="@+id/editTextVerifyReason"
+				android:layout_below="@+id/textViewVerifydescription"
+				android:layout_marginTop="20dp"
+				android:layout_marginRight="5dp"
+				android:layout_alignStart="@+id/textViewAcceptHeader" />
+		</RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed to Report"
+            android:id="@+id/buttonProceed"
+            android:background="#18a9f0"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+    </RelativeLayout>
+</RelativeLayout>

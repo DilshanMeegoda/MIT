@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <ExpandableListView
+        android:id="@+id/userList"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:groupIndicator="@null"
+        android:listSelector="@color/transparent"
+        android:layout_above="@+id/btnCollaboratorsConfirm"
+        android:divider="@color/transparent" />
+    <Button
+        android:id="@+id/btnCollaboratorsConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/user_list_button_confirm"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:text="Confirm" />
+    <LinearLayout
+        android:id="@+id/viewEmptyUsers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtEmptyUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp" />
+    </LinearLayout>
+</RelativeLayout>

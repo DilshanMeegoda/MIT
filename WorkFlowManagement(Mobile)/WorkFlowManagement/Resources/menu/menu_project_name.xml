@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <!--
+  <item android:id="@+id/action_project_search"
+        android:icon="@drawable/search_navbar_new"
+        android:title="Search"
+        android:orderInCategory="1"
+        app:showAsAction="always"/>
+  -->
+  <item android:id="@+id/action_project_search"
+        android:icon="@drawable/search_navbar_new"
+        android:title="Search"
+        android:orderInCategory="1"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"/>
+
+
+  <item android:id="@+id/more"
+        android:icon="@drawable/more_navbar_new"
+        android:orderInCategory="3"
+        app:showAsAction="always"
+        android:title="More" >
+
+    <menu>
+      <item android:id="@+id/action_new_project"
+            android:showAsAction="ifRoom"
+            android:title="New Project" />
+    </menu>
+  </item>
+</menu>

@@ -1,0 +1,11 @@
+﻿<div class="handle">::: </div>
+<div class="fa fa-times delete" ng-click="list.splice($index, 1)"> </div>
+<div class="name" dnd-nodrag>
+    {{item.typeAlies}}
+    <div ng-show="false">{{item.sortOrder=$index + 1}}</div>
+    <div ng-show="false">{{item.id}}</div>
+    <input type="text" ng-model="item.title" class="form-control input-sm" placeholder="{{item.typeAlies +' Title goes here'}}">
+    <br />
+    <textarea ng-model="item.info" class="form-control input-sm" placeholder="{{item.typeAlies +' Information goes here'}}"></textarea>
+</div>
+<div ng-include="'views/Report/Templates/optionsTmpl.html'"></div>

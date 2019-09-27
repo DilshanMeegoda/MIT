@@ -1,0 +1,16 @@
+﻿<ul dnd-list="listElements"
+    dnd-disable-if="models.Elements.length>=models.Elements.length">
+
+    <li class="handle" ng-repeat="item in report.reportVm.models.Elements"
+        dnd-draggable="item"
+        dnd-effect-allowed="copy">
+
+        <div class="name">
+            ::: {{item.typeAlies}}
+        </div>
+    </li>
+
+    <!--<li class="dndPlaceholder">
+        Drop any item here.....
+    </li>-->
+</ul>

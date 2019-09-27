@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html ng-app="angularjsFormBuilderApp" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <base href="/">
+    <title>Ticked Admin Portal</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/app/loginstyle.css" rel="stylesheet" />
+
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href="Content/ui-grid.min.css" rel="stylesheet" />
+    <link href="Content/app/dragdrop.css" rel="stylesheet" />
+    <link href="Content/app/ng-img-crop.min.css" rel="stylesheet" />
+    <link href="Content/app/ng-tags-input.css" rel="stylesheet" />
+
+</head>
+<body ng-controller="loginController as user">
+
+    <div ng-include="user.template"></div>
+
+    <script src="Scripts/libs/jquery-1.9.1.js"></script>
+    <script src="Scripts/libs/angular/angular.js"></script>
+    <script src="Scripts/libs/angular/angular-route.js"></script>
+    <script src="Scripts/libs/bootstrap.js"></script>
+    <script src="Scripts/libs/angular-flash.js"></script>
+    <script src="Scripts/libs/ui-grid.min.js"></script>
+    <script src="Scripts/libs/angular-drag-and-drop-lists.js"></script>
+    <script src="Scripts/libs/ng-img-crop.js"></script>
+    <script src="Scripts/libs/ng-tags-input.js"></script>
+    <script src="Scripts/libs/angular/angular-resource.js"></script>
+    <script src="Scripts/libs/angular/angular-cookies.js"></script>
+    <script src="Scripts/libs/angular/angular-ui/ui-bootstrap.js"></script>
+    <script src="Scripts/libs/angular/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="Scripts/libs/angular/angular-strap.js"></script>
+    <script src="Scripts/libs/underscore.min.js"></script>
+
+    <script src="Scripts/app/config.js"></script>
+    <script src="Scripts/app/app.js"></script>
+    <script src="Scripts/app/controllers/mainController.js"></script>
+    <script src="Scripts/app/controllers/loginController.js"></script>
+    <script src="Scripts/app/services/loginService.js"></script>
+    <script src="Scripts/app/factory/authenticationFactory.js"></script>
+    <script src="Scripts/app/factory/sessionFactory.js"></script>
+
+    <script src="Scripts/app/controllers/reportListController.js"></script>
+    <script src="Scripts/app/controllers/reportCreateController.js"></script>
+    <script src="Scripts/app/controllers/reportController.js"></script>
+    <script src="Scripts/app/controllers/reportEditController.js"></script>
+    <script src="Scripts/app/controllers/header.js"></script>
+    <script src="Scripts/app/services/reportService.js"></script>
+
+    <script src="Scripts/app/controllers/companyListController.js"></script>
+    <script src="Scripts/app/controllers/companyCreateController.js"></script>
+    <script src="Scripts/app/controllers/companyEditController.js"></script>
+    <script src="Scripts/app/services/companyService.js"></script>
+
+    <script src="Scripts/app/controllers/projectController.js"></script>
+    <script src="Scripts/app/controllers/projectEditController.js"></script>
+    <script src="Scripts/app/services/projectService.js"></script>
+
+    <script src="Scripts/app/controllers/userListController.js"></script>
+    <script src="Scripts/app/controllers/userCreateController.js"></script>
+    <script src="Scripts/app/controllers/userEditController.js"></script>
+    <script src="Scripts/app/services/userService.js"></script>
+
+    <script src="Scripts/app/directives/dropDownMultiSelectDirective.js"></script>
+    <script src="Scripts/app/directives/fileChangeDirective.js"></script>
+    <script src="Scripts/app/directives/checkBoxDirective.js"></script>
+
+    <script src="Scripts/app/controllers/statisticsController.js"></script>
+    <script src="Scripts/app/controllers/statisticsDetailsController.js"></script>
+    <script src="Scripts/app/services/statisticsService.js"></script>
+
+
+</body>
+</html>

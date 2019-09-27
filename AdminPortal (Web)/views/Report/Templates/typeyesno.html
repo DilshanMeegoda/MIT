@@ -1,0 +1,7 @@
+﻿
+<div ng-include="'views/Report/Templates/typedefault.html'"></div>
+
+<div ng-if="(item.options|filter:{code:'conditional'})[0].value=='true'">
+    <div ng-include="'views/Report/Templates/conditionalTmpl.html'"></div>
+</div>
+

@@ -1,0 +1,26 @@
+﻿
+<style type="text/css">
+    .gridStyle {
+        border: 3px solid #d4d4d4;
+        width: 100%;
+        height: 800px;
+    }
+</style>
+
+<div>
+    <div>
+        <div style="overflow:hidden;margin: 10px 0;">
+            <a ng-click="company.CreateNewCompany()" class="btn-highlight btn" style="float:left;">Create Company</a>
+            <div class="input-group custom-search-form" style="float:left; width:50%; margin-left:10px;">
+                <input type="text" class="form-control" placeholder="Search..." ng-model="company.companyVm.term">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="company.GetCompaniesByTerm()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="gridStyle" ui-grid="company.gridOptions"></div>
+</div>

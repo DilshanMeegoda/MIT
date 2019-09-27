@@ -1,0 +1,21 @@
+﻿
+<div ng-include="'views/Report/Templates/typedefault.html'"></div>
+
+<div ng-repeat="field in item.values" class="add-child-fld">
+    <div ng-show="false">{{field.id=$index + 1}}</div>
+    <input type="text" ng-model="field.name" class="form-control input-sm report-create-chk-child" placeholder="Item Name"> <div class="fa fa-times delete btn-child-del" ng-click="item.values.splice($index, 1)"> </div>
+    <div class="mr-t-10 mr-b-10">
+        <div class="checkbox-inline pull-right option-padding">
+            <label>
+                <input type="checkbox" ng-model="field.condition"> Conditional
+            </label>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div ng-if="field.condition">
+        <div ng-include="'views/Report/Templates/childItemsTmpl.html'"></div>
+    </div>
+
+</div>
+<div class="fa fa-plus report-create-add-btn" ng-click="addNewItem(item.values)">Add</div>
+
